@@ -243,7 +243,7 @@
         <!--Find Location View Controller-->
         <scene sceneID="P6M-El-wzR">
             <objects>
-                <viewController id="Glm-JK-Ukc" customClass="findLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Glm-JK-Ukc" customClass="FindLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bda-zl-d2O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

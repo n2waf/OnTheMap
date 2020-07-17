@@ -78,11 +78,14 @@ class APIClient {
     class func taskforPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.timeoutInterval = 10
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONEncoder().encode(body)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
-            if error != nil { // Handle error…
+            if error != nil {
+                completion(nil,error)
+                // Handle error…
                 return
             }
             guard let data = data else {

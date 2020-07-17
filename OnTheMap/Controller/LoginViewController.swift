@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController , UITextFieldDelegate{
 
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var email: UITextField!
@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
         email.setLeftPaddingPoints(4)
         password.setLeftPaddingPoints(4)
         logInButtonOutlet.layer.cornerRadius = 7
+        email.delegate = self
+        password.delegate = self
+        email.tag = 0
+        password.tag = 1
         
     }
     
@@ -56,7 +60,7 @@ class LoginViewController: UIViewController {
         APIClient.createSession(UserInfo: userInfo) { (response, error) in
            DispatchQueue.main.async {
             if error != nil {
-                    let alert = UIAlertController.ShowAlert("Failure", error.debugDescription)
+                let alert = UIAlertController.ShowAlert("Failure", error!.localizedDescription)
                     self.present(alert, animated: true)
             } else {
                     UIAlertController.ShowAlertWithSegue("Success", "", vc: self, segue: "main")
@@ -65,10 +69,20 @@ class LoginViewController: UIViewController {
             }
             
         }
-        
-        
     }
 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            logIn(self)
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
 }
 
 extension UITextField {
@@ -82,4 +96,6 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    
+    
 }

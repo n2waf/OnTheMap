@@ -15,7 +15,12 @@ class MapViewController: UIViewController , MKMapViewDelegate {
         super.viewDidLoad()
 
         APIClient.getStudentLocations { (data, error) in
-            self.handleMapData((data?.results)!)
+            guard let data = data?.results else {
+                let alert = UIAlertController.ShowAlert("failure", "Faild to fetch data from server")
+                self.present(alert,animated: true)
+                return
+            }
+            self.handleMapData(data)
         }
     }
     

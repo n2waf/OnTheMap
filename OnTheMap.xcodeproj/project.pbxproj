@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD24F7E924BF989C00F5C8E7 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7E824BF989C00F5C8E7 /* AddLocationViewController.swift */; };
-		BD24F7EB24BF9B2200F5C8E7 /* findLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7EA24BF9B2200F5C8E7 /* findLocationViewController.swift */; };
+		BD24F7EB24BF9B2200F5C8E7 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7EA24BF9B2200F5C8E7 /* FindLocationViewController.swift */; };
 		BD24F7ED24BFA0D300F5C8E7 /* AlertEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7EC24BFA0D300F5C8E7 /* AlertEx.swift */; };
 		BD88704E24BE225300D5B2A7 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88704D24BE225300D5B2A7 /* CreateSession.swift */; };
 		BD88705024BE2E7B00D5B2A7 /* SessionFailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88704F24BE2E7B00D5B2A7 /* SessionFailureResponse.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		BD24F7E824BF989C00F5C8E7 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
-		BD24F7EA24BF9B2200F5C8E7 /* findLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findLocationViewController.swift; sourceTree = "<group>"; };
+		BD24F7EA24BF9B2200F5C8E7 /* FindLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 		BD24F7EC24BFA0D300F5C8E7 /* AlertEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEx.swift; sourceTree = "<group>"; };
 		BD88704D24BE225300D5B2A7 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
 		BD88704F24BE2E7B00D5B2A7 /* SessionFailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFailureResponse.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				BD88705324BE337600D5B2A7 /* MapViewController.swift */,
 				BD88705624BE3CE600D5B2A7 /* ListViewController.swift */,
 				BD24F7E824BF989C00F5C8E7 /* AddLocationViewController.swift */,
-				BD24F7EA24BF9B2200F5C8E7 /* findLocationViewController.swift */,
+				BD24F7EA24BF9B2200F5C8E7 /* FindLocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				BDE7786D24BB7EB700D1C7C1 /* LoginViewController.swift in Sources */,
 				BD88705724BE3CE600D5B2A7 /* ListViewController.swift in Sources */,
 				BDE7788E24BBA8B900D1C7C1 /* PostRequest.swift in Sources */,
-				BD24F7EB24BF9B2200F5C8E7 /* findLocationViewController.swift in Sources */,
+				BD24F7EB24BF9B2200F5C8E7 /* FindLocationViewController.swift in Sources */,
 				BDE7788A24BB831E00D1C7C1 /* APIClint.swift in Sources */,
 				BD24F7E924BF989C00F5C8E7 /* AddLocationViewController.swift in Sources */,
 				BDE7788724BB828300D1C7C1 /* StudentLocationModel.swift in Sources */,
