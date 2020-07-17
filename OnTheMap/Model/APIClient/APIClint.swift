@@ -14,7 +14,7 @@ enum EndPoints {
     var StringValue : String {
         switch self {
         case .StudentsLocations:
-            return "https://onthemap-api.udacity.com/v1/StudentLocation"
+            return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt&limit=100"
         case .Session:
             return "https://onthemap-api.udacity.com/v1/session"
         }
@@ -124,22 +124,21 @@ class APIClient {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONEncoder().encode(body)
-        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
-                completion(nil,error)
+                completion(nil,NSError(domain: "Server Error", code: 0, userInfo: nil))
                 return
             }
             let range : Range = 5..<data.count
             let newData = data.subdata(in: range)
+            let decoder = JSONDecoder()
             do {
-                let decoder = JSONDecoder()
                 let _ = try decoder.decode(SessionSuccessfulResponse.self, from: newData)
                 completion("Success" , nil)
             } catch {
-                completion(nil,error)
+                completion(nil,NSError(domain: "Login Data incorrect", code: 403, userInfo: nil))
             }
-            completion("failure",error)
+            
         }.resume()
         
     }

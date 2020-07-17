@@ -11,7 +11,7 @@
 		BD24F7EB24BF9B2200F5C8E7 /* findLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7EA24BF9B2200F5C8E7 /* findLocationViewController.swift */; };
 		BD24F7ED24BFA0D300F5C8E7 /* AlertEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24F7EC24BFA0D300F5C8E7 /* AlertEx.swift */; };
 		BD88704E24BE225300D5B2A7 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88704D24BE225300D5B2A7 /* CreateSession.swift */; };
-		BD88705024BE2E7B00D5B2A7 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88704F24BE2E7B00D5B2A7 /* SessionResponse.swift */; };
+		BD88705024BE2E7B00D5B2A7 /* SessionFailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88704F24BE2E7B00D5B2A7 /* SessionFailureResponse.swift */; };
 		BD88705224BE313C00D5B2A7 /* SessionSuccessfulResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88705124BE313C00D5B2A7 /* SessionSuccessfulResponse.swift */; };
 		BD88705424BE337600D5B2A7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88705324BE337600D5B2A7 /* MapViewController.swift */; };
 		BD88705724BE3CE600D5B2A7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88705624BE3CE600D5B2A7 /* ListViewController.swift */; };
@@ -32,7 +32,7 @@
 		BD24F7EA24BF9B2200F5C8E7 /* findLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findLocationViewController.swift; sourceTree = "<group>"; };
 		BD24F7EC24BFA0D300F5C8E7 /* AlertEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEx.swift; sourceTree = "<group>"; };
 		BD88704D24BE225300D5B2A7 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
-		BD88704F24BE2E7B00D5B2A7 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		BD88704F24BE2E7B00D5B2A7 /* SessionFailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFailureResponse.swift; sourceTree = "<group>"; };
 		BD88705124BE313C00D5B2A7 /* SessionSuccessfulResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSuccessfulResponse.swift; sourceTree = "<group>"; };
 		BD88705324BE337600D5B2A7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD88705624BE3CE600D5B2A7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				BDE7788B24BBA4DD00D1C7C1 /* PostResponse.swift */,
 				BDE7788D24BBA8B900D1C7C1 /* PostRequest.swift */,
 				BD88704D24BE225300D5B2A7 /* CreateSession.swift */,
-				BD88704F24BE2E7B00D5B2A7 /* SessionResponse.swift */,
+				BD88704F24BE2E7B00D5B2A7 /* SessionFailureResponse.swift */,
 				BD88705124BE313C00D5B2A7 /* SessionSuccessfulResponse.swift */,
 				BD24F7EC24BFA0D300F5C8E7 /* AlertEx.swift */,
 			);
@@ -216,7 +216,7 @@
 				BD24F7E924BF989C00F5C8E7 /* AddLocationViewController.swift in Sources */,
 				BDE7788724BB828300D1C7C1 /* StudentLocationModel.swift in Sources */,
 				BDE7786924BB7EB700D1C7C1 /* AppDelegate.swift in Sources */,
-				BD88705024BE2E7B00D5B2A7 /* SessionResponse.swift in Sources */,
+				BD88705024BE2E7B00D5B2A7 /* SessionFailureResponse.swift in Sources */,
 				BDE7788C24BBA4DD00D1C7C1 /* PostResponse.swift in Sources */,
 				BD88705224BE313C00D5B2A7 /* SessionSuccessfulResponse.swift in Sources */,
 				BD88704E24BE225300D5B2A7 /* CreateSession.swift in Sources */,

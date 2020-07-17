@@ -79,12 +79,17 @@
                                     <segue destination="aK7-KU-FYa" kind="presentation" identifier="main" modalPresentationStyle="fullScreen" id="lxC-qo-Z20"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-Lh-IlM">
+                                <rect key="frame" x="188.5" y="539" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="L0i-md-tNu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5uB-ni-pjQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0P-kZ-ONm" secondAttribute="bottom" constant="20" id="FDc-hC-X37"/>
                             <constraint firstItem="g5X-f9-ikt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LNl-Cd-zAx"/>
+                            <constraint firstItem="jmt-Lh-IlM" firstAttribute="top" secondItem="L0i-md-tNu" secondAttribute="bottom" constant="20" id="a4L-hP-bZB"/>
+                            <constraint firstItem="jmt-Lh-IlM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="egu-s4-cg8"/>
                             <constraint firstItem="g5X-f9-ikt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ks4-aX-r6k"/>
                             <constraint firstItem="g0P-kZ-ONm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ss3-Xk-eE5"/>
                             <constraint firstItem="L0i-md-tNu" firstAttribute="top" secondItem="g5X-f9-ikt" secondAttribute="bottom" constant="10" id="xeM-6f-U8G"/>
@@ -92,6 +97,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="jmt-Lh-IlM" id="PGd-JT-X32"/>
                         <outlet property="email" destination="fw3-Uy-A11" id="g2n-3x-yvP"/>
                         <outlet property="logInButtonOutlet" destination="GHo-yG-9kf" id="mMZ-tb-cFB"/>
                         <outlet property="password" destination="jCP-Rq-O9k" id="a57-im-Uzo"/>
@@ -202,10 +208,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="axK-zm-4OB">
+                                <rect key="frame" x="197" y="486" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ytB-Ya-dLh" firstAttribute="centerX" secondItem="WP1-NW-WyH" secondAttribute="centerX" id="6Di-mo-AcE"/>
+                            <constraint firstItem="axK-zm-4OB" firstAttribute="top" secondItem="ytB-Ya-dLh" secondAttribute="bottom" constant="20" id="QDP-YT-khv"/>
+                            <constraint firstItem="axK-zm-4OB" firstAttribute="centerX" secondItem="WP1-NW-WyH" secondAttribute="centerX" id="RIs-jj-pa8"/>
                             <constraint firstItem="ytB-Ya-dLh" firstAttribute="top" secondItem="O2u-cs-EDc" secondAttribute="top" constant="100" id="cVJ-eE-sYp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O2u-cs-EDc"/>
@@ -218,6 +229,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityView" destination="axK-zm-4OB" id="6Qd-Zb-M2o"/>
                         <outlet property="findLocationOutlet" destination="AUu-2U-H7T" id="bDn-CA-bxr"/>
                         <outlet property="link" destination="pzs-ko-uQt" id="cEt-tV-vKK"/>
                         <outlet property="name" destination="Ayg-Uy-vUl" id="VFb-p7-lom"/>
@@ -255,6 +267,9 @@
                                     <action selector="Finish:" destination="Glm-JK-Ukc" eventType="touchUpInside" id="Z44-tp-2Ur"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-ko-hbg">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -262,14 +277,17 @@
                             <constraint firstItem="nWp-R4-vtZ" firstAttribute="top" secondItem="znk-6D-7wz" secondAttribute="top" id="Agb-cW-yoQ"/>
                             <constraint firstItem="nWp-R4-vtZ" firstAttribute="leading" secondItem="znk-6D-7wz" secondAttribute="leading" id="Tk8-sX-WfJ"/>
                             <constraint firstItem="aaE-ls-hnH" firstAttribute="leading" secondItem="znk-6D-7wz" secondAttribute="leading" constant="50" id="VYe-hx-rg5"/>
+                            <constraint firstItem="Irr-ko-hbg" firstAttribute="centerY" secondItem="bda-zl-d2O" secondAttribute="centerY" id="WhO-ky-Y2n"/>
                             <constraint firstItem="znk-6D-7wz" firstAttribute="trailing" secondItem="aaE-ls-hnH" secondAttribute="trailing" constant="50" id="XED-Of-zKS"/>
                             <constraint firstItem="znk-6D-7wz" firstAttribute="bottom" secondItem="nWp-R4-vtZ" secondAttribute="bottom" id="YZf-KD-pWx"/>
+                            <constraint firstItem="Irr-ko-hbg" firstAttribute="centerX" secondItem="bda-zl-d2O" secondAttribute="centerX" id="ajc-0q-hEh"/>
                             <constraint firstItem="znk-6D-7wz" firstAttribute="trailing" secondItem="nWp-R4-vtZ" secondAttribute="trailing" id="tef-fb-zIR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="znk-6D-7wz"/>
                     </view>
                     <navigationItem key="navigationItem" id="jdL-vU-FX5"/>
                     <connections>
+                        <outlet property="activityView" destination="Irr-ko-hbg" id="pLQ-Go-PKg"/>
                         <outlet property="finishOutlet" destination="aaE-ls-hnH" id="vUa-nA-dAe"/>
                         <outlet property="mapView" destination="nWp-R4-vtZ" id="ESd-mi-IhM"/>
                     </connections>

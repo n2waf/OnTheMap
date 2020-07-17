@@ -10,6 +10,7 @@ import UIKit
 
 class AddLocationViewController: UIViewController {
 
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var findLocationOutlet: UIButton!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var link: UITextField!
@@ -26,11 +27,15 @@ class AddLocationViewController: UIViewController {
     }
     
     @IBAction func findLocation(_ sender: Any) {
+        self.activityView.startAnimating()
         if name.text != "" && link.text != "" {
             self.performSegue(withIdentifier: "findLocation", sender: self)
         } else {
             let alert = UIAlertController.ShowAlert("Some Thing wrong", "Be sure you are fill the name and link !")
             self.present(alert,animated: true)
+        }
+        DispatchQueue.main.async {
+            self.activityView.stopAnimating()
         }
         
     }

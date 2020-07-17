@@ -10,11 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var logInButtonOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpView()
     }
     
@@ -36,27 +38,35 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func logIn(_ sender: Any) {
+        
         if email.text != "" && password.text != "" {
+            self.activityView.startAnimating()
              createSessionRequest(userName: email.text!, password: password.text!)
         } else {
+         
             let alert = UIAlertController.ShowAlert("Some Thing wrong", "Be sure you are fill the email and password !")
             self.present(alert,animated: true)
         }
        
-    }
+    } 
     
     func createSessionRequest(userName:String , password:String) {
+        
         let userInfo = CreateSession(udacity: Udacity(username: userName, password: password))
-        APIClient.createSession(UserInfo: userInfo) { (data, error) in
-            if data != "failure" {
-                DispatchQueue.main.async {
+        APIClient.createSession(UserInfo: userInfo) { (response, error) in
+           DispatchQueue.main.async {
+            if error != nil {
+                    let alert = UIAlertController.ShowAlert("Failure", error.debugDescription)
+                    self.present(alert, animated: true)
+            } else {
                     UIAlertController.ShowAlertWithSegue("Success", "", vc: self, segue: "main")
                 }
-            } else {
-                let alert = UIAlertController.ShowAlert("failure", "server issue")
-                self.present(alert, animated: true)
+            self.activityView.stopAnimating()
             }
+            
         }
+        
+        
     }
 
 }

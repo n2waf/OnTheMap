@@ -11,6 +11,7 @@ import MapKit
 
 class findLocationViewController: UIViewController , MKMapViewDelegate{
 
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     var address : String? = ""
     var link : String? = ""
     @IBOutlet weak var mapView: MKMapView!
@@ -25,21 +26,28 @@ class findLocationViewController: UIViewController , MKMapViewDelegate{
     }
     
     @IBAction func Finish(_ sender: Any) {
-        let Student = PostRequest(uniqueKey: "123", firstName: "Yazed", lastName: "omar", mapString: address!, mediaURL: link!, latitude: Double(location!.latitude), longitude: Double(location!.longitude))
+        self.activityView.startAnimating()
+        let Student = PostRequest(uniqueKey: "123", firstName: "Yazed", lastName: "omari", mapString: address!, mediaURL: link!, latitude: Double(location!.latitude), longitude: Double(location!.longitude))
        
         APIClient.postStudentLocations(Student: Student) { (response, error) in
-            print(response?.objectID)
-            if response?.objectID != "" {
-                DispatchQueue.main.async {
-                     self.dismiss(animated: true, completion: nil)
-                }
-               
+            DispatchQueue.main.async {
+            if let response = response {
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            } else {
+                let alert = UIAlertController.ShowAlert("Post fails", "try again later")
+                self.present(alert,animated: true)
+            }
+            self.activityView.stopAnimating()
             }
         }
-        print("?????")
+        
+        
     }
     
     func findLocation() {
+        self.activityView.startAnimating()
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address!) { (placemarks, error) in
             guard
@@ -57,6 +65,7 @@ class findLocationViewController: UIViewController , MKMapViewDelegate{
                 self.finishOutlet.isEnabled = true
                 self.mapView.addAnnotation(annotation)
                 self.mapView.setCenter(location.coordinate, animated: true)
+                self.activityView.stopAnimating()
             }
             
         }

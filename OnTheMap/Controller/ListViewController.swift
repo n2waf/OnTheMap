@@ -30,10 +30,16 @@ class ListViewController: UIViewController , UITableViewDelegate,UITableViewData
     }
     @IBAction func Reload(_ sender: Any) {
         APIClient.getStudentLocations { (data, error) in
-            self.LocationsData = (data?.results)!
-            DispatchQueue.main.async {
-                self.tableview.reloadData()
+            if error != nil {
+                let alert = UIAlertController.ShowAlert("Faild to fetch data", "Try again later or reload")
+                self.present(alert,animated: true)
+            } else {
+                self.LocationsData = (data?.results)!
+                DispatchQueue.main.async {
+                    self.tableview.reloadData()
+                }
             }
+            
             
         }
     }
